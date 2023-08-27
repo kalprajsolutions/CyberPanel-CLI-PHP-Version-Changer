@@ -13,12 +13,14 @@ done
 read -p "Enter the number corresponding to the PHP version: " choice
 
 # Validate the choice
-if (( choice >= 0 && choice < ${#php_versions[@]} )); then
+if [[ $choice =~ ^[0-9]+$ ]] && (( choice >= 0 && choice < ${#php_versions[@]} )); then
     selected_version="${php_versions[choice]}"
     echo "Changing PHP version to $selected_version..."
 
-    # Remove existing PHP binary symlink
-    rm -rf /usr/bin/php
+    # Remove existing PHP binary symlink if it exists
+    if [ -L "/usr/bin/php" ]; then
+        rm -f /usr/bin/php
+    fi
 
     # Create symbolic link to desired PHP version
     ln -s "/usr/local/$selected_version/bin/php" /usr/bin/php
