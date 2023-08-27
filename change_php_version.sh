@@ -25,7 +25,7 @@ if [ "$choice" -ge 0 ] && [ "$choice" -lt $i ]; then
     fi
 
     # Create symbolic link to desired PHP version
-    ln -s "/usr/local/$selected_version/bin/php" /usr/bin/php
+    ln -s "/usr/local/lsws/$selected_version/bin/php" /usr/bin/php
 
     echo "PHP version changed to $selected_version."
 else
