@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Array of available PHP versions
 php_versions=("lsphp74" "lsphp80" "lsphp82")  # Update with your available versions
