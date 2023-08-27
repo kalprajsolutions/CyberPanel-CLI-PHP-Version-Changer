@@ -21,7 +21,7 @@ if [ "$choice" -ge 0 ] && [ "$choice" -lt $i ]; then
 
     # Remove existing PHP binary symlink if it exists
     if [ -L "/usr/bin/php" ]; then
-        rm -f /usr/bin/php
+        rm -rf /usr/bin/php
     fi
 
     # Create symbolic link to desired PHP version
