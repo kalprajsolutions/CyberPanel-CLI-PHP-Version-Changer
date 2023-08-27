@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # List of available PHP versions
-php_versions="lsphp74 lsphp80 lsphp82"  # Update with your available versions
+php_versions="lsphp72 lsphp73 lsphp74 lsphp80 lsphp81 lsphp82"
 
 # Display menu of PHP versions
 echo "Select the PHP version you want to set as default:"
@@ -24,10 +24,15 @@ if [ "$choice" -ge 0 ] && [ "$choice" -lt $i ]; then
         rm -rf /usr/bin/php
     fi
 
-    # Create symbolic link to desired PHP version
-    ln -s "/usr/local/lsws/$selected_version/bin/php" /usr/bin/php
-
-    echo "PHP version changed to $selected_version."
+    # Check if selected php version exists
+    if [ -L "/usr/local/lsws/$selected_version/bin/php" ]; then
+        # Create symbolic link to desired PHP version
+        ln -s "/usr/local/lsws/$selected_version/bin/php" /usr/bin/php
+        echo "PHP version changed to $selected_version."
+    else
+        echo "PHP version $selected_version doesnt exists."
+    fi
+    
 else
     echo "Invalid choice. Exiting."
 fi
