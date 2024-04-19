@@ -39,4 +39,4 @@ This project is licensed under the MIT License.
 
 Note: This script is provided as-is and without any warranty. Use it at your own risk.
 
-Keywords: change php version, change php version ubuntu, composer change php version, composer php version change
+Keywords: change php version, change php version ubuntu, composer change php version, composer php version change, change cyberpanel php version
