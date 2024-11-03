@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # List of available PHP versions
-php_versions="lsphp72 lsphp73 lsphp74 lsphp80 lsphp81 lsphp82"
+php_versions="lsphp72 lsphp73 lsphp74 lsphp80 lsphp81 lsphp82 lsphp83"
 
 # Display menu of PHP versions
 echo "Select the PHP version you want to set as default:"
